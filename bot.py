@@ -13,18 +13,19 @@ timetable = {"日曜日":"**日曜日は休み**",
              "土曜日": "**土曜日\n\n:one::数学A\n:two::英語\n:three::数学Ⅰ\n:four::道徳**"}
 
 
-def DayOfWeek():
-    today = datetime.date.today()
+def DayOfWeek(today):
     weekdays = ["月曜日", "火曜日", "水曜日", "木曜日", "金曜日", "土曜日", "日曜日"]
     today_weekdays = weekdays[today.weekday()]
 
     return timetable[today_weekdays]
 
 
+
 bot = disnake.Client(intents=disnake.Intents.all())
 @bot.event
 async def on_ready():
     print(f'{bot.user.name} has connected to Discord!')
+
 
 @bot.event
 async def on_message(message):
@@ -34,16 +35,13 @@ async def on_message(message):
     print(message.content)
 
     if  message.content == '時間割':
-        DayOfWeek()
-
         
-        response = DayOfWeek()
+        response = DayOfWeek(datetime.date.today())
 
-    elif message.content == 'おはよう':
-        response = 'おはようございます！'
+    elif message.content == '明日の時間割':
+        response = DayOfWeek(datetime.date.today() + datetime.timedelta(days=1))
     
-    else:
-        response = 'ありがとう'
+    elif 
 
     await message.channel.send(response)
 bot.run(setting.TOKEN)
