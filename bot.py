@@ -22,7 +22,7 @@ def getTimetable(day):
         return timetable[weekday]
 
 
-bot: disnake.Client = disnake.Client(intents=disnake.Intents.all())
+bot = disnake.Client(intents=disnake.Intents.all())
 
 
 @bot.event
