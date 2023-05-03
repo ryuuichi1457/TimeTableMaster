@@ -14,11 +14,11 @@ timetable = {
 }
 
 
-def getTimetable(day) -> str:
+def getTimetable(day):
     if isinstance(day, str) and day in timetable:
         return timetable[day]
     elif isinstance(day, int):
-        weekday = timetable.keys()[day%7]
+        weekday = list(timetable.keys())[day%7]
         return timetable[weekday]
 
 
@@ -35,7 +35,7 @@ async def on_message(message):
     if message.author == bot.user:
         return
 
-    today = datetime.date.today()
+    today = datetime.date.today().day
 
     if  message.content == '時間割':
         response = getTimetable(today)
