@@ -20,7 +20,6 @@ def DayOfWeek(today):
     return timetable[today_weekdays]
 
 
-
 bot = disnake.Client(intents=disnake.Intents.all())
 @bot.event
 async def on_ready():
@@ -41,7 +40,7 @@ async def on_message(message):
     elif message.content == '明日の時間割':
         response = DayOfWeek(datetime.date.today() + datetime.timedelta(days=1))
     
-    elif 
+    
 
     await message.channel.send(response)
 bot.run(setting.TOKEN)
