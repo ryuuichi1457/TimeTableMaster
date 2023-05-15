@@ -40,7 +40,7 @@ async def on_message(message):
         response = getTimetable(today)
 
     elif message.content == '明日の時間割':
-        response = DayOfWeek(datetime.date.today() + datetime.timedelta(days=1))
+        response = getTimetable(today+1)
     
     
 
