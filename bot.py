@@ -33,7 +33,7 @@ async def on_ready():
 async def on_message(message):
     if message.author == bot.user:
         return
-    print(message.content)
+    print(f"guild: `{message.guild.name}`, channel: `{message.channel.name}`\nuser: {message.author.name}\nmessage: {message.content}")
     today = datetime.date.today().day
     response=None
     if  message.content == '時間割':
