@@ -35,7 +35,7 @@ async def on_message(message):
         return
 
     today = datetime.date.today().day
-
+    response=None
     if  message.content == '時間割':
         response = getTimetable(today)
 
