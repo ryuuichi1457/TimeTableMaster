@@ -41,7 +41,8 @@ async def on_message(message):
 
     elif message.content == '明日の時間割':
         response = getTimetable(today+1)
-    
+    else:
+        return
     
 
     await message.channel.send(response)
