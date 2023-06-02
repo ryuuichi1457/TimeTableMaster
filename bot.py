@@ -3,7 +3,6 @@ import datetime
 import setting
 
 
-
 timetable = {
     "月曜日": "**月曜日\n\n:one::数学Ⅰ\n:two::国語A\n:three::理科特論\n:four::英語\n:five::数学A\n:six::公民**",
     "火曜日": "**火曜日\n\n:one::GlobalStudy\n:two::技術\n:three::音楽\n:four::英語\n:five::英語\n:six::保健**",
